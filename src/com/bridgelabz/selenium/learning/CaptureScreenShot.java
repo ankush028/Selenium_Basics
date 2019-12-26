@@ -21,7 +21,9 @@ public class CaptureScreenShot {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File srcFile =ts.getScreenshotAs(OutputType.FILE);
 		File destFile = new File("/home/admin1/Pictures/photos"+date1+"selenium.png");
+		
 		Files.copy(srcFile, destFile);
+		
 		driver.close();
 		
 		

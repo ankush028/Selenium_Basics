@@ -15,11 +15,15 @@ public class KeyBoard_Mouse_Operation {
 		driver.navigate().to("https://www.google.com");
 		driver.manage().window().maximize();
 		Thread.sleep(1000);
+		
 		Robot robot = new Robot();
 		robot.mouseMove(300,500);
 		robot.keyPress(KeyEvent.VK_ALT);
+		
 		robot.keyPress(KeyEvent.VK_F);
+		
 		robot.keyRelease(KeyEvent.VK_F);
+		
 		robot.keyRelease(KeyEvent.VK_ALT);		
 		Thread.sleep(2000);
 		driver.close();

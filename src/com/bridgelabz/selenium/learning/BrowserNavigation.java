@@ -19,8 +19,6 @@ public class BrowserNavigation {
 		driver.navigate().refresh();
 		Thread.sleep(1000);
 		driver.close();
-		
-		
 	}
 
 }
