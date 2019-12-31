@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,9 +18,11 @@ public class OpenBrowser {
 		System.setProperty("webdriver.chrome.driver",
 				"/home/admin1/Desktop/SeleniumDriver/chromedriver_linux64/chromedriver");
 		WebDriver driver = new ChromeDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		driver.get("https://www.facebook.com");
 		driver.manage().window().maximize();
 		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(0,1000)");
 		driver.findElement(By.id("email")).sendKeys("9069057147");
 		TakesScreenshot ts = (TakesScreenshot) driver;	
 		File srcFile =ts.getScreenshotAs(OutputType.FILE);
